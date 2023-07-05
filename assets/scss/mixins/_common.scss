@@ -1,0 +1,93 @@
+// =========================================================================================
+@mixin img_cover($w, $h, $br:50%, $borderColor:$gray2) {
+  width: $w;
+  height: $h;
+  border: 1px solid $borderColor;
+  border-radius: $br;
+
+  img {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      object-fit: cover;
+      @if $br==50% {
+          border-radius: $br;
+      }
+      @else {
+          border-radius: $br - 2px;
+      }
+  }
+}
+
+// =========================================================================================
+// 그림자 관련 css
+$shadowColor1:                    rgba(24,39,75,0.1);
+$shadowColor2:                    rgba(24,39,75,0.14);
+$shadowColor3:                    rgba(24,39,75,0.16);
+
+@mixin shadow_opt($direction, $size:1){
+  @if $direction == 'top' {
+      $direction: -1;
+  }
+  @if $direction == 'center' {
+      $direction: 0; 
+  }
+  @if $direction == 'bottom' {
+      $direction: 1;
+  }
+
+  @if $size == 1 {
+      box-shadow: 0 calc(6px * $direction) 12px -6px $shadowColor2, 0 calc(8px * $direction) 24px -4px $shadowColor1;
+  }
+  @if $size == 2 {
+      box-shadow: 0 calc(6px * $direction) 14px -6px $shadowColor2, 0 calc(10px * $direction) 32px -4px $shadowColor2;
+  }
+  @if $size == 3 {
+      box-shadow: 0 calc(8px * $direction) 18px -6px $shadowColor2, 0 calc(12px * $direction) 42px -4px $shadowColor2;
+  }
+  @if $size == 4 {
+      box-shadow: 0 calc(8px * $direction) 22px -6px $shadowColor2, 0 calc(14px * $direction) 64px -4px $shadowColor2;
+  }
+  @if $size == 5 {
+      box-shadow: 0 calc(8px * $direction) 28px -6px $shadowColor2, 0 calc(18px * $direction) 88px -4px $shadowColor3;
+  }
+}
+
+// =========================================================================================
+// flexbox 사용
+@mixin flex_box($justify:flex-start, $align:center){
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+};
+
+@mixin flex_column($justify:center, $align:flex-start){
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: column;
+}
+
+@mixin flex_wrap($justify:flex-start, $align:center){
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: wrap;
+}
+
+// =========================================================================================
+// txt ( ... ) 처리하기
+@mixin ellipsis($line:1){
+  @if $line==1 {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+  }
+  @else {
+      display: -webkit-box;
+      -webkit-line-clamp: $line;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+  }
+}
