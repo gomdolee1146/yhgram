@@ -1,0 +1,90 @@
+// ======================= Global STYLE GUIDE v.1.0.0
+// ======================= 03. 버튼, 칩, 뱃지
+
+// mixins 파일 사용하기
+// 기존 mixin 삭제 금지(사용하지 않는 mixins는 상관없음. - 삭제시 기존 mixins는 다른 css로 교체후 사용.)
+
+// 텍스트만 있는 형태의 버튼, 칩, 뱃지
+// <button class="btn__cancel">취소</button>
+@mixin txt_button($height, $bg, $px:4px, $fontColor:$gray_10, $lh:$height) {
+    display: inline-block;
+    padding: 0 $px;
+    background-color: $bg;
+
+    @if $height == 's' {
+        height: 46px;
+        line-height: 46px;
+        @include typography('paragraph', 3, 500, $fontColor);
+    }
+    @else if $height == 'm' {
+        height: 52px;
+        line-height: 52px;
+        @include typography('paragraph', 3, 500, $fontColor);
+    }
+    // @else if $height == 'l' {
+    //     height: 50px;
+    //     line-height: 50px;
+    //     @include font_default(20px, $fontColor, 700);
+    // }
+    @else {
+        height: $height;
+        line-height: $lh;
+    }
+}
+
+// 아이콘과 텍스트가 같이 조합되어있는 형태의 버튼, 칩, 뱃지
+// <button class="btn__cancel"><i></i><span>취소</span></button>
+// <button class="btn__cancel"><span>취소</span><i></i></button>
+@mixin ico_txt_button($height, $bg, $px, $mx, $iconName, $iconSize, $iconColor, $fontColor:$gray_10, $lh:$height) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 $px;
+
+    @if $height == 's' {
+        height: 46px;
+        line-height: 46px;
+        @include typography('paragraph', 3, 500, $fontColor);
+    }
+    @else if $height == 'm' {
+        height: 52px;
+        line-height: 52px;
+        @include typography('paragraph', 3, 500, $fontColor);
+    }
+    // @else if $height == 'l' {
+    //     height: 50px;
+    //     line-height: 50px;
+    //     @include font_default(20px, $fontColor, 700);
+    // }
+    @else {
+        height: $height;
+        line-height: $lh;
+    }
+
+    i {
+        @include setIcon($iconName, $iconSize, $iconColor);
+        margin: 0 $mx;
+    }
+}
+
+// 아이콘만 있는 형태의 버튼, 칩, 뱃지
+
+// <button class="btn__call"></button>
+@mixin ico_button($height, $bg, $iconName, $iconSize, $iconColor) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $height;
+    @include setIcon($iconName, $iconSize, $iconColor);
+}
+
+// 이미지와 텍스트가 같이 조합되어있는 형태의 버튼, 칩, 뱃지
+// <button class="btn__cancel">취소</button>
+@mixin img_txt_button($height, $padding, $bg, $fontSize, $fontColor, $lh:$height){
+    display: inline-block;
+    height: $height;
+    line-height: $lh;
+    padding: $padding;
+    background: $bg;
+    @include font_default($fontSize, $fontColor);
+}

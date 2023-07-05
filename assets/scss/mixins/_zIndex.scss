@@ -1,0 +1,19 @@
+// mixins 파일 사용하기
+// 기존 mixin 삭제 금지(사용하지 않는 mixins는 상관없음. - 삭제시 기존 mixins는 다른 css로 교체후 사용.)
+
+// z-index 관련 규칙 - 전역 선언되는 레이어 또는 컴포넌트에 사용합니다.
+// 페이지 내 0 ~ 20 사이 값은 작성하지 않아도 됨.
+// .main_header {position:fixed; z-index:z(mainheader);
+
+  $zIndex_list: (
+    'mainheader':               200,
+    'quickbutton':              400,
+    'quickList':                410,
+    'hamburger':                500,
+    'fltrLayer':                800,
+    'system':                   2000,
+);
+
+@function z($layer){
+    @return map-get($zIndex_list, $layer);
+}

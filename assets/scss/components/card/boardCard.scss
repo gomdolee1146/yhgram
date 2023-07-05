@@ -1,0 +1,33 @@
+.card {
+  padding: 0 20px; 
+  background: #fff;
+
+  &__content {  
+
+  }
+  &__photolist {
+    
+  }
+  &__txt {
+
+  }
+
+  &__btn_wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__btn {
+    flex: 0 0 calc(50% - 4px);
+    height: 36px; 
+    line-height: 36px;
+    &-active {
+      background: $primary;
+      @include font_default(14px, 700, #fff);
+    }
+    &-inactive {
+      background: $gray2;
+      @include font_default(14px, 700, $gray5);
+    }
+  }
+}

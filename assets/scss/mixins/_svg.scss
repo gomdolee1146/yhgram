@@ -1,0 +1,94 @@
+// ======================= Global STYLE GUIDE v.1.0.0
+// ======================= 04. 아이콘
+
+// mixins 파일 사용하기
+// 기존 mixin 삭제 금지(사용하지 않는 mixins는 상관없음. - 삭제시 기존 mixins는 다른 css로 교체후 사용.)
+
+// ========== svg 아이콘
+// 두가지 방법으로 사용합니다.
+//
+// 1. @function iconImg() 사용하기
+// .ico_mappin{background: iconImg(mappin, $svg_signature);}
+//
+// 2. @mixin setIcon() 사용하기
+// .ico_prev{@include setIcon(prev, 20px, $svg_gray_900);}
+// .ico_chevronR{@include setIcon(chevronR, 16px, $svg_gray_600, inline-block)}
+
+@function iconImg($iconName, $iconColor) {
+  $iconList:(
+      // 예시코드입니다 실제 작업전에 삭제 예정.
+      prev:        "%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' fill='none'%3E%3Cpath stroke='#{$iconColor}' stroke-width='2.2' d='m23 13-7 7 7 7'/%3E%3C/svg%3E",
+  );
+
+  $icon: map-get($iconList, $iconName);
+  @return url("data:image/svg+xml;charset=utf8,#{$icon}")
+};
+
+@mixin setIcon($iconName, $iconSize, $iconColor, $disp:block){
+  display: $disp;
+  width: $iconSize;
+  height: $iconSize;
+  background: iconImg($iconName, $iconColor) no-repeat center / 100% auto;
+}
+
+// SVG 용 컬러 변수 - SVG 코드에서는 #fff 대신 %23fff를 사용하기 때문에 svg용 컬러변수 값 따로 사용.
+// 변수 추가 또는 수정 시 colors.scss 파일에도 동시에 작업 필요
+
+$svg_primary:                           '%2323F594';
+$svg_primary_1:                         '%23E9FEF5';
+$svg_primary_2:                         '%23D3FDEA';
+$svg_primary_3:                         '%23BDFCDF';
+$svg_primary_4:                         '%23A7FBD4';
+$svg_primary_5:                         '%2391FACA';
+$svg_primary_6:                         '%237BF9BF';
+$svg_primary_7:                         '%2365F8B5';
+$svg_primary_8:                         '%234FF7A9';
+$svg_primary_9:                         '%2339F69F';
+
+$svg_secondary:                         '%23FF55FE';
+$svg_secondary_1:                       '%23FFEEFF';
+$svg_secondary_2:                       '%23FFDDFF';
+$svg_secondary_3:                       '%23FFCCFF';
+$svg_secondary_4:                       '%23FFBBFF';
+$svg_secondary_5:                       '%23FFAAFF';
+$svg_secondary_6:                       '%23FF99FE';
+$svg_secondary_7:                       '%23FF88FF';
+$svg_secondary_8:                       '%23FF77FE';
+$svg_secondary_9:                       '%23FF66FF';
+
+$svg_gray_0:                            '%23fff';
+$svg_gray_1:                            '%23F1F1F1';
+$svg_gray_2:                            '%23E8E8E8';
+$svg_gray_3:                            '%23DBDBDB';
+$svg_gray_4:                            '%23C7C7C7';
+$svg_gray_5:                            '%23B1B1B1';
+$svg_gray_6:                            '%23969696';
+$svg_gray_7:                            '%23636363';
+$svg_gray_8:                            '%23505050';
+$svg_gray_9:                            '%23333333';
+$svg_gray_10: 							            '%23111';
+
+// SubColor
+$svg_g_danger:                          '%23FF334B';
+$svg_g_danger_l:                        '%23FFEBED';
+$svg_g_success:                         '%2306C755';
+$svg_g_success_l:                       '%23E6FAEE';
+$svg_g_error:                           '%23FFAA04';
+$svg_g_error_l:                         '%23FFF7E6';
+$svg_g_secure:                          '%234270ED';
+$svg_g_secure_l:                        '%23ECF1FD';
+
+$svg_g_cash:                            '%23FEB031';
+$svg_g_cash_l:                          '%23FFFBEC';
+$svg_g_cash_d:                          '%23681B07';
+$svg_g_gem:                             '%23FF7ED8';
+$svg_g_gem_l:                           '%23FFF6FC';
+$svg_g_gem_d:                           '%23FF525D';
+
+$svg_female:                            '%23FF6988';
+$svg_female_l:                          '%23FFB1C1';
+$svg_female_bg:                         '%23fff4f6';
+
+$svg_male:                              '%235D7EE8';
+$svg_male_l:                            '%23ABBEFA';
+$svg_male_bg:                           '%23f0f3ff';

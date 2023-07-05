@@ -1,0 +1,42 @@
+.form {
+
+  &__title {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    @include font_default(16px, 500, $primary);
+
+    i {
+      display: block;
+      width: 20px;
+      height: 20px;
+      margin-left: 4px;
+      background: $primary;
+    }
+
+  }
+  &__input {
+    padding: 12px 16px;
+    margin-bottom: 8px;
+    border: 1px solid $gray3;
+    border-radius: 8px;
+    background: $gray2;
+    @include font_default(13px, 500, $gray8);
+    box-sizing: border-box;
+  }
+}
+
+input.form__input{
+  height: 44px;
+
+}
+textarea.form__input{
+  height: 280px;
+}
+
+.form__input {
+  &::placeholder {
+    @include font_default(13px, 400, $gray8);
+  }
+}

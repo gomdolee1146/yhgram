@@ -1,0 +1,11 @@
+.user {
+  @include flex_box(flex-start, center);
+
+  &__thumb {
+    @include img_cover(48px, 48px);
+  }
+  &__info {
+    @include font_default(18px, 700, $primary);
+  }
+}
+

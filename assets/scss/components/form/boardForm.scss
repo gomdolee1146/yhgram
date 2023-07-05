@@ -1,0 +1,54 @@
+.board_form {
+  &__wrap {}
+  &__title{
+    margin-bottom: 12px;
+  }
+  &__cont {
+    margin-bottom: 12px;
+  }
+
+
+  // 여행 글쓰기 일 때
+  &__photo {
+    margin: 48px 0 36px;
+
+    &_title {
+      @include font_default(13px, 400, $gray5);
+    }
+
+    &_box {
+      display: block;
+      width: 100px;
+      height: 100px;
+      margin-right: 8px;
+      border-radius: 12px;
+      border: 1px solid $gray3;
+      background: #fff;
+
+      img {
+        @include img_cover;
+      }
+    }
+  }
+
+  &__chk {
+    margin-bottom: 48px;
+  }
+
+  // 그룹초대 게시글 일 때
+  
+
+
+
+  &__btn {
+    margin-top: 8px;
+    &-active {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: $primary;
+      @include font_default(16px, 700, #fff);
+      text-align: center;
+    }
+  }
+}
