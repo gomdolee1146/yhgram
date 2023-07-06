@@ -1,7 +1,7 @@
 
 *{margin:0; padding:0; border:0; outline:0; text-size-adjust:none; -webkit-tap-highlight-color:transparent;}
 html{/*-webkit-overflow-scrolling:touch; -ms-overflow-scrolling:touch;*/ text-size-adjust:none; -webkit-text-size-adjust:none; }
-body{width:100%; min-width:320px; line-height:1.25; background:#fff; letter-spacing:-0.5px; font-size:18px; font-family:'Pretendard-Regular', 'NotoSans', 'Malgun Gothic', '¸¼Àº °íµñ', sans-serif; font-display:swap; }
+body{width:100%; min-width:320px; line-height:1.25; background:#fff; letter-spacing:-0.5px; font-size:18px; font-family:'NotoSans', 'Malgun Gothic', '맑은 고딕', sans-serif; font-display:swap; }
 header, article, footer{background:#fff; }
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section{display:block; }
 audio, canvas, progress, video{display:inline-block; vertical-align:baseline; }
@@ -28,7 +28,7 @@ sub,sup{position:relative; vertical-align:baseline; font-size:.75rem; }
 sup{top:-.5rem; }
 sub{bottom:.25rem; }
 small{font-size:.75rem; }
-pre{font-family:'Pretendard-Regular', 'NotoSans', 'Malgun Gothic', '¸¼Àº °íµñ', sans-serif; white-space:pre-wrap; word-wrap:break-word; }
+pre{font-family:'NotoSans', 'Malgun Gothic', '맑은 고딕', sans-serif; white-space:pre-wrap; word-wrap:break-word; }
 
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {-webkit-appearance:none; margin:0;}

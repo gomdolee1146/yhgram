@@ -17,7 +17,8 @@ export default {
   },
 
   css: [
-    './assets/css/reset.css'
+    './assets/css/reset.css',
+    './assets/css/font.css'
   ],
 
   plugins: [
