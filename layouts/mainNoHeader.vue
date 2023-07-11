@@ -1,7 +1,6 @@
 <template> 
   <div class="pc">
-    <mainHeader />
-    <div class="header_fix footer_fix">
+    <div class="footer_fix">
       <nuxt />
     </div>
     <mainFooter />
@@ -9,12 +8,11 @@
 </template>
 
 <script>
-import mainHeader from '@/components/layouts/mainHeader.vue'
 import mainFooter from '@/components/layouts/mainFooter.vue'
 
 export default {
   name:'mainLayout',
-  components:{ mainHeader, mainFooter },
+  components:{ mainFooter },
   props:{},
   data(){
     return{

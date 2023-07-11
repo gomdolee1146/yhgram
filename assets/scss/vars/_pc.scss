@@ -1,1 +1,21 @@
-.box{width:100%; }
+$pc_border:     #dfdfdf;
+$pc_bg:         #f1f1f1;
+$pc_breakpoint:   520px;
+
+@media screen and (min-width:520px) {
+    body {
+        position: relative;
+        width: 100%;
+        background: $pc_bg !important;
+        overflow-y: scroll;
+    }
+    .pc {
+        position: relative;
+        width: $pc_breakpoint;
+        min-height: 100vh;
+        margin: 0 auto;
+        border-left: 1px solid $pc_border;
+        border-right: 1px solid $pc_border;
+        background-color: #fff;
+    }
+}

@@ -20,7 +20,7 @@ export default {
     }
   },
   methods:{
-    toMain(){
+    goToMain(){
       $this.router.push('/'); // router.push 인지 replace인지 확인
     }
   }

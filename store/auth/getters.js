@@ -1,5 +1,5 @@
 export const getters = {
-  storedUserList : state.userList,
+  // storedUserList : state.auth.userList,
 }
 
 export default getters;

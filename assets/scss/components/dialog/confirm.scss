@@ -1,0 +1,56 @@
+.confirm {
+
+	&__wrap {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		min-width: 260px;
+		width: 80%;
+		max-width: 400px;
+		padding: 12px 16px;
+		border-radius: 12px;
+		background: #fff;
+		box-sizing: border-box;
+		transform: translate(-50%, -50%);
+	}
+
+	&__title {
+		height: 48px;
+		line-height: 48px;
+		text-align: center;
+		@include font_default(14px, 500, $gray8);
+	}
+
+	&__cont {
+		@include flex_box(center, center);
+		padding: 24px 0;
+		line-height: 1.4;
+		@include font_default(13px, 400, $gray6);
+	}
+
+	&__btn {
+		@include flex_box(center, center);
+
+		button {
+			flex: 1 1 auto;
+			display: inline-block;
+			height: 40px;
+			line-height: 40px;
+			border-radius: 20px;
+		}
+
+		&-cancel {
+			border: 1px solid $gray4;
+			background: $gray2;
+			@include font_default(13px, 400, $gray5);
+			box-sizing: border-box;
+		}
+		&-done {
+			border: 0 none;
+			background: $primary;
+			@include font_default(13px, 700, #fff);
+			box-sizing: border-box;
+		}
+	}
+}
+

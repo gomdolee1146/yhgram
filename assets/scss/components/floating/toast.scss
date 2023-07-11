@@ -1,0 +1,9 @@
+.toast {
+    display: inline-block;
+    padding: 12px 16px;
+    line-height: 1.4;
+    border-radius: 12px;
+    background: rgba(0,0,0,.6); 
+    @include font_default(13px, 400, #fff);
+    // 애니메이션 추가할까말까
+}

@@ -1,20 +1,18 @@
 <template> 
   <div class="pc">
     <mainHeader />
-    <div class="header_fix footer_fix">
+    <div class="header_fix">
       <nuxt />
     </div>
-    <mainFooter />
   </div>
 </template>
 
 <script>
 import mainHeader from '@/components/layouts/mainHeader.vue'
-import mainFooter from '@/components/layouts/mainFooter.vue'
 
 export default {
   name:'mainLayout',
-  components:{ mainHeader, mainFooter },
+  components:{ mainHeader },
   props:{},
   data(){
     return{
@@ -22,7 +20,6 @@ export default {
   },
   methods:{
   }
-
 }
 </script>
 <style lang="scss" scoped>

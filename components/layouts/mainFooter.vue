@@ -1,24 +1,45 @@
 <template> 
- <div class="main_footer">
-  <button class="main_footer__btn-home"></button>
- </div>
+	<div class="main_footer">
+		<button class="main_footer__btn main_footer__btn-home" @click="goToHome"><i></i>홈</button>
+		<!-- <button class="main_footer__btn main_footer__btn-mylist" @click="goToMyList"><i></i>내글보기</button> -->
+		<!-- <button class="main_footer__btn main_footer__btn-group" @click="goToGroup"><i></i>여행그룹</button> -->
+		<button class="main_footer__btn main_footer__btn-mypage" @click="goToMypage"><i></i>마이페이지</button>
+	</div>
 </template>
 
 <script>
 export default {
-  name:'',
-  components:{},
-  layout:'default',  
-  props:{},
-  data(){
-    return{
-    }
-  },
-  methods:{
-  }
+	name:'',
+	components:{},
+	layout:'default',  
+	props:{},
+	data(){
+		return{
+		}
+	},
+	methods:{
+		goToHome() {
+			this.$router.push('/');
+			console.log('홈으로 이동함니당')
+		},
+
+		// goToMyList() {
+		// 	this.$router.push('/mypage/mypageList');
+		// },
+
+		// goToGroup() {
+		// 	this.$router.push('/group')
+		// },
+		
+		goToMypage() {
+			this.$router.push('/mypage/mypageMain');
+			console.log('마이페이지로 이동합니다.');
+		},
+		
+	}
 
 }
 </script>
 <style lang="scss" scoped>
-
+@import '@/assets/scss/components/layouts/mainFooter.scss';
 </style>

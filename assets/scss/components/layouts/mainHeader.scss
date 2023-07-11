@@ -9,3 +9,7 @@
   background: #fff;
   box-sizing: border-box;
 }
+
+.main_header + div {
+  padding-top: 60px;
+}

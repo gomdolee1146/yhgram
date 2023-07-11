@@ -6,6 +6,7 @@
       페이지에 파라미터 전달해야 하니까 다르게 값 전달하기
 
       -- 스토어에서 DB mutations 쪽에서 create / update / delete 구분해서 사용할 수 있도록 체크하기
+      -- ㄴ 이거 아니고 로컬스토리지도 확인하기
      -->
   </board-form>
 </template>

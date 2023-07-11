@@ -3,12 +3,33 @@
   background: #fff;
 
   &__content {  
-
+    margin-bottom: 12px;
   }
-  &__photolist {
-    
+  &__photo {
+    margin-bottom: 20px;
+
+    &_box {
+      @include img_cover(100%, 160px, 12px);
+    }
+    &_pagination {
+      @include flex_box(center, center);
+      margin: 8px 0;
+    }
+  }
+  &__title {
+    @include font_default(16px, 700, $gray8);
   }
   &__txt {
+    @include font_default(14px, 500, $gray6);
+    
+    &-cut {
+      width: 100%;
+      @include ellipsis;
+    }
+  }
+
+  &__like {
+    @include flex_box(flex-start, center);
 
   }
 

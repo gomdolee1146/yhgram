@@ -1,0 +1,11 @@
+.main_footer {
+    @include flex_box(center, center);
+    position: fixed;
+    width: 100%;
+    max-width: $pc_breakpoint;
+    &__btn {
+        flex: 1 1 auto;
+        @include flex_column(center, center);
+    }
+
+}

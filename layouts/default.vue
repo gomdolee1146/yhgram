@@ -1,5 +1,7 @@
 <template> 
- <div class="pc"></div>
+ <div class="pc">
+  <nuxt/>
+</div>
 </template>
 
 <script>
@@ -12,9 +14,5 @@ export default {
   },
   methods:{
   }
-
 }
 </script>
-<style lang="scss" scoped>
-
-</style>

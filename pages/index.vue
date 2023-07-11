@@ -1,5 +1,5 @@
 <template>
-  <div>리스트 메인페이지</div>
+  <div></div>
 </template>
 
 <script>
