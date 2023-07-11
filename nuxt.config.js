@@ -40,5 +40,7 @@ export default {
   ],
 
   build: {
-  }
+  },
+  
+  serverMiddleware: ['~/api/index.js']
 }
