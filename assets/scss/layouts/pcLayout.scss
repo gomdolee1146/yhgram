@@ -1,11 +1,11 @@
 @media screen and (min-width:520px) {
-    body {
+    .pc__bg {
         position: relative;
         width: 100%;
         background: $pc_bg !important;
         overflow-y: scroll;
     }
-    .pc {
+    .pc__wrap {
         position: relative;
         width: $pc_breakpoint;
         min-height: 100vh;

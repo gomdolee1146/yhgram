@@ -1,9 +1,11 @@
 <template> 
-  <div class="pc">
-    <div class="footer_fix">
-      <nuxt />
+  <div class="pc__bg">
+    <div class="pc__wrap">
+      <div class="footer_fix">
+        <nuxt />
+      </div>
+      <mainFooter />
     </div>
-    <mainFooter />
   </div>
 </template>
 
@@ -25,4 +27,5 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import '@/assets/scss/layouts/mainLayout.scss';
+@import '@/assets/scss/layouts/pcLayout.scss';
 </style>

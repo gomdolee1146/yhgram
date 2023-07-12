@@ -1,6 +1,8 @@
 <template> 
- <div class="pc">
-  <nuxt/>
+ <div class="pc__bg">
+  <div class="pc__wrap">
+    <nuxt/>
+  </div>
 </div>
 </template>
 
@@ -16,3 +18,6 @@ export default {
   }
 }
 </script>
+<style lang="scss" scoped>
+@import '@/assets/scss/layouts/pcLayout.scss';
+</style>
