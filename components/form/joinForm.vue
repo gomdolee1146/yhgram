@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import UserList from '@/plugins/obj/userList.js';
+// import UserList from '@/plugins/obj/userList.js';
 
 export default {
 	name: 'joinForm',
@@ -48,8 +48,7 @@ export default {
 			pwCheckTxt: '',
 			isPwValidateCheck: false,
 			pwValidCheckTxt: '',
-
-			formData: new UserList('', '', ''),
+			
 		};
 	},
 	beforeMounted() {
@@ -62,7 +61,7 @@ export default {
 	methods: {
 		goToLogin() {
 			this.$router.push('/login');
-			console.log('로그인으로 이동함니다') // 확인
+			console.log('로그인으로 이동함니다') // 토스트 추가하기 
 		},
 
 		// 회원가입 완료
@@ -71,16 +70,18 @@ export default {
 			//   this.userInfo.Nick = this.joinNick;
 			//   this.userInfo.Pw = this.joinPw;
 			//   console.log(this.userInfo);
+			const $this = this; 
 
 			/** 모든 조건이 일치할 경우 */
 			if ( checkJoinID && checkJoinNick && checkJoinPW && checkJoinPwValid ) {
-				// this.$store.state.auth.userList.push ({
-				//   id: this.joinId,
-				//   nick: this.joinNick,
-				//   pw: this.joinPW,
-				// })
-				axios
-					.post('/join', UserList)
+				$this.$axios
+					.post('/api/users', { // 주소 다시 확인하기
+						userNo : Date.now(),
+						userID : this.joinId,
+						userNick : this.joinNick,
+						userPW : this.joinPw,
+					//   console.log(this.userInfo);
+					})
 					.then(() => {
 						this.goToLogin()
 					})
