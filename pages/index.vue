@@ -4,6 +4,16 @@
 
 <script>
 export default {
-  name: 'indexPage'
+  name: 'indexPage',
+  mounted() {
+   
+  },
+  computed: {
+     async asyncData({app, query}){
+      const hello = await app.$axios.$get('/api/');
+      return { hello }
+    }
+
+  }
 }
 </script>
