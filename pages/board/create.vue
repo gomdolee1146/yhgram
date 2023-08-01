@@ -26,6 +26,25 @@ import boardForm from '../../components/form/boardForm.vue'
 
 export default {
   components: { boardForm },
-  name:'boardCreate'
+  name:'boardCreate',
+  methods: {
+    createNewBoard(event){
+      this.$http.post('/api/models/board', {   // 주소 확인하기
+        board: this.board     // 
+      })
+      .then((res) => {
+        if (res.data.result === 0){
+          console.log('error')
+        }
+        if (res.data.result === 1){
+          console.log('good');
+          this.$router.push('/index');
+        }
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+    }
+  }
 }
 </script>

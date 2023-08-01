@@ -6,14 +6,12 @@
 export default {
   name: 'indexPage',
   mounted() {
-   
+    console.log('메인페이지')
+    this.$router.push('/board');
+    console.log('게시판페이지')
   },
   computed: {
-     async asyncData({app, query}){
-      const hello = await app.$axios.$get('/api/');
-      return { hello }
-    }
-
+     
   }
 }
 </script>
