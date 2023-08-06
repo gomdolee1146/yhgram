@@ -82,7 +82,7 @@ export default {
 	},
 	methods:{
 		onBoard() {
-			console.log('gg')
+			// this.$store.mutations.board.toSubmitContent();
 		}
 	}
 }

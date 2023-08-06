@@ -7,8 +7,8 @@ app.get('/', function (req, res) {
   res.send('Hello World!')
 });
 
-const users = require('./routes/users.js');
-app.use('/users', users);
+let postsRouter = require('./routes/posts.js');
+app.use('/posts', postsRouter);
 
 module.exports = {
   path: '/api',

@@ -3,7 +3,7 @@
 		<h4 class="login__logo">YHGRAM</h4>
 		<div class="login__wrap">
 			<div class="txt__box">
-                <input v-model="loginId" type="text" class="txt__input" @input="checkLoginID" />
+                <input v-model="formData.id" type="text" class="txt__input" @input="checkLoginID" />
                 <label class="txt__label">아이디</label>
 				<span v-if="isIdCheck" class="txt__label">{{ idCheckTxt }}</span>
             </div>
@@ -12,7 +12,7 @@
                 <label class="txt__label">닉네임</label>
             </div> -->
             <div class="txt__box">
-                <input v-model="loginPw" type="password" class="txt__input" @input="checkLoginPW" />
+                <input v-model="formData.password" type="password" class="txt__input" @input="checkLoginPW" />
                 <label class="txt__label">비밀번호</label>
             </div>
 		</div>
@@ -22,7 +22,9 @@
 </template>
 
 <script>
-import LoginUser from '@/plugins/obj/loginUser.js';
+// import LoginUser from '@/plugins/obj/loginUser.js';
+import LoginObj from '~/api/models/loginObj.js';
+import axios from 'axios'
 
 export default {
 	name:'',
@@ -31,16 +33,12 @@ export default {
 	props:{},
 	data(){
 		return{
-			loginId: '',
-			// loginNick: '',
-			loginPw: '',
-
 			isIdCheck: false,
 	 		idCheckTxt: '',
  			isPwCheck: false,
 	  		pwCheckTxt: '',
 
-			formData: new LoginUser('',''),
+			formData: new LoginObj('', '')
 		}
 	},
 	methods:{
@@ -50,16 +48,20 @@ export default {
 		},
 
 		// 로그인 완료
-		loginSubmit(LoginUser) {
+		loginSubmit(LoginObj) {
 			/** 모든 조건이 일치하는 경우 */
 			if ( checkLoginId && checkLoginPw ) {
 				axios
-					.post('/login', LoginUser)
-					.then(() => {
+					.post('/login', LoginObj)
+					.then((res) => {
+						let token = res.data.token
+						localStorage.setItem('access_token', token);
+						this.$store.dispatch('getAccountInfo')
 						this.goToMain
 					})
 					.catch((err) => {
 						if (err.response) {
+							this.isError = true
 							console.log(err.response.data.message);
 						}
 					})
@@ -69,7 +71,7 @@ export default {
 		// 아이디 영역 유효성 검사
 		checkLoginID() {
 			const idValCheck = /^[a-zA-Z0-9]{4,12}$/;
-			const result = idValCheck.test(this.loginId);
+			const result = idValCheck.test(this.formData.id);
 			if (!result) {
 				this.isIdCheck = true;
 				this.idCheckTxt = '아이디를 정확하게 입력해주세요.';
@@ -81,7 +83,7 @@ export default {
 		// PW 영역 유효성 검사
 		checkLoginPW() {
 			const pwValCheck = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-~])(?=.*[0-9]).{8,15}$/;
-			const result = pwValCheck.test(this.loginPw);
+			const result = pwValCheck.test(this.formData.password);
 			if (!result) {
 				this.isPwCheck = true;
 				this.pwCheckTxt = '영문,숫자,특문조합 8자리 이상 입력해주세요.';
