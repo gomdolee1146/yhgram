@@ -11,7 +11,7 @@
   &__title {
       margin-bottom: 16px;
 
-      @include font_default(18px, 500, #111);
+      @include font_default(18px, 500, $gray8);
   }
 
   &__wrap {
@@ -25,9 +25,9 @@
       height: 44px;
       line-height: 44px;
       border-radius: 22px;
-      background: #008fa0;
+      background: $primary;
 
-      @include font_default(14px, 700, #fff);
+      @include font_default(14px, 700, $gray1);
 
       text-align: center;
   }

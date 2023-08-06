@@ -1,10 +1,10 @@
 <template> 
   <div class="main_header">
     <div class="main_header__logo" @click="on">
-      <img src="" />
+      <img src="@/assets/imgs/Logo_b.png" />
     </div>
     <div class="main_header__btn_wrap">
-      <button class="main_header__btn btn-alarm">알람버튼</button>
+      <button class="main_header__btn main_header__btn-alarm">알람버튼</button>
     </div>
   </div>
 </template>

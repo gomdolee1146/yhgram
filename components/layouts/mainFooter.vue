@@ -2,7 +2,7 @@
 	<div class="main_footer">
 		<button class="main_footer__btn main_footer__btn-home" @click="goToHome"><i></i>홈</button>
 		<!-- <button class="main_footer__btn main_footer__btn-mylist" @click="goToMyList"><i></i>내글보기</button> -->
-		<!-- <button class="main_footer__btn main_footer__btn-group" @click="goToGroup"><i></i>여행그룹</button> -->
+		<button class="main_footer__btn main_footer__btn-product" @click="goToProduct"><i></i>여행상품</button>
 		<button class="main_footer__btn main_footer__btn-mypage" @click="goToMypage"><i></i>마이페이지</button>
 	</div>
 </template>
@@ -23,13 +23,14 @@ export default {
 			console.log('홈으로 이동함니당')
 		},
 
-		// goToMyList() {
-		// 	this.$router.push('/mypage/mypageList');
-		// },
+		goToMyList() {
+			// this.$router.push('/mypage/mypageList');
+			console.log('내글목록으로이동')
+		},
 
-		// goToGroup() {
-		// 	this.$router.push('/group')
-		// },
+		goToProduct() {
+			this.$router.push('/product/productMain')
+		},
 		
 		goToMypage() {
 			this.$router.push('/mypage/mypageMain');

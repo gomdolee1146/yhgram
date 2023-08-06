@@ -28,9 +28,44 @@
     }
   }
 
+  &__info {
+    margin-top: 16px;
+    p {
+      display: flex;
+      height: 22px;
+      line-height: 22px;
+    }
+    &-dis {
+      padding-left: 22px;
+      background: iconImg(mappin, $svg_gray8) no-repeat left center / auto 16px;
+      @include font_default(13px, 700, $gray8);
+    }
+    &-cmt {
+      padding-left: 22px;
+      background: iconImg(msg, $svg_gray6) no-repeat left center / auto 16px;
+      @include font_default(13px, 500, $gray6);
+    }
+  }
+
   &__like {
     @include flex_box(flex-start, center);
+    margin-top: 20px;
 
+    &_list {
+      @include flex_box(flex-start, center); 
+    }
+    &_lst {
+      margin-right: -8px;
+      border: 1px solid $gray1;
+      @include img_cover(32px, 32px);
+
+      &:last-child {
+        margin-right: 8px;
+      }
+    }
+    &_txt {
+      @include font_default(13px, 700, $gray6);
+    }
   }
 
   &__btn_wrap {
@@ -42,13 +77,47 @@
     flex: 0 0 calc(50% - 4px);
     height: 36px; 
     line-height: 36px;
+    border-radius: 18px;
+    box-sizing: border-box;
     &-active {
       background: $primary;
       @include font_default(14px, 700, #fff);
     }
     &-inactive {
+      line-height: 34px;
+      border: 1px solid $primary;
+      @include font_default(14px, 700, $primary4);
+    }
+    &-disabled {
+      
       background: $gray2;
       @include font_default(14px, 700, $gray5);
     }
+  }
+}
+
+.card__user {
+  position: relative;
+  margin-bottom: 16px;
+
+  .user__thumb {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .user__info {
+    padding-left: 8px;
+    @include font_default(16px, 700, $primary);
+  }
+
+  .card__date {
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    @include font_default(13px, 500, $gray6);
+    transform: translateY(-50%);
   }
 }

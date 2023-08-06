@@ -1,11 +1,35 @@
 .main_footer {
     @include flex_box(center, center);
     position: fixed;
+    bottom: 0;
+    left: 50%;
     width: 100%;
     max-width: $pc_breakpoint;
+    height: 58px;
+    padding: 4px 0;
+    background: $gray1;
+    box-sizing: border-box;
+    transform: translateX(-50%);
+    z-index: z(mainfooter);
+    @include shadow_opt('top', 2);
+    
     &__btn {
-        flex: 1 1 auto;
+        flex: 1 1 25%;
+        padding-top: 28px;
+        @include font_default(14px, 500, $gray6);
         @include flex_column(center, center);
-    }
 
+        &-home {
+            background: iconImg(home, $svg_gray6) no-repeat top center / 24px auto;
+        }
+        &-mylist {
+            background: iconImg(airplane, $svg_gray6) no-repeat top center / 24px auto;
+        }
+        &-product {
+            background: iconImg(mappin, $svg_gray6) no-repeat top center / 24px auto;
+        }
+        &-mypage {
+            background: iconImg(profile, $svg_gray6) no-repeat top center / 24px auto;
+        }
+    }
 }

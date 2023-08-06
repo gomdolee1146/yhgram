@@ -2,14 +2,39 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  top: 0;
+  left: 50%;
   width: 100%;
+  max-width: $pc_breakpoint;
   height: 60px;
   padding: 0 12px 0 16px;
-  border-bottom: 1px solid #fff;
-  background: #fff;
+  border-bottom: 1px solid $gray4;
+  background: $gray1;
   box-sizing: border-box;
+  transform: translateX(-50%);
+  z-index: z(mainheader);
+
+  &__logo {
+    img {
+      width: auto;
+      height: 24px;
+    }
+  }
+
+  &__btn {
+    display: block;
+    width: 40px;
+    height: 40px;
+
+    &-alarm {
+      background: iconImg(bell, $svg_gray6) no-repeat center / 24px auto;
+      text-indent: -9999px; 
+    }
+  }
 }
 
-.main_header + div {
+.main_header + div,
+.main_header + ul {
   padding-top: 60px;
 }

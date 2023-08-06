@@ -1,7 +1,14 @@
 .board__list {
-    margin: 0 16px;
+    padding: 12px 16px;
+    
 }
 
 .board__lst {
     margin-bottom: 16px;
+}
+
+div.card {
+    padding: 20px;
+    border-radius: 20px; 
+    @include shadow_opt('center', 2);
 }
