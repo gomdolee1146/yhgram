@@ -1,5 +1,5 @@
 const product = {
-    state: {
+    state: () => ({
         productList:   [
             {
                 airline: '제주항공',
@@ -93,7 +93,7 @@ const product = {
             },
          
         ],
-    },
+    }),
     
   
     getters: {},
