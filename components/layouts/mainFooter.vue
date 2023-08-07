@@ -1,6 +1,6 @@
 <template> 
 	<div class="main_footer">
-		<button class="main_footer__btn main_footer__btn-home" @click="goToHome"><i></i>홈</button>
+		<button class="main_footer__btn main_footer__btn-home" @click="goToHome" ref="btnHome"><i></i>홈</button>
 		<!-- <button class="main_footer__btn main_footer__btn-mylist" @click="goToMyList"><i></i>내글보기</button> -->
 		<button class="main_footer__btn main_footer__btn-product" @click="goToProduct"><i></i>여행상품</button>
 		<button class="main_footer__btn main_footer__btn-mypage" @click="goToMypage"><i></i>마이페이지</button>
@@ -36,9 +36,12 @@ export default {
 			this.$router.push('/mypage/mypageMain');
 			console.log('마이페이지로 이동합니다.');
 		},
-		
-	}
-
+	},
+	computed: {
+		// setActiveBtn() {
+		// 	if ($route.path == '/') this.$refs.btnHome.classList.add('on')
+		// }
+	},
 }
 </script>
 <style lang="scss" scoped>

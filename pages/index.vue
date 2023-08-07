@@ -1,9 +1,5 @@
 <template>
-  <div>
-    <!-- 메인페이지 -->
     <board-list />
-
-  </div>
 </template>
 
 <script>

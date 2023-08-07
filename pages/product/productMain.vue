@@ -1,11 +1,13 @@
 <template> 
- <div>상품페이지 메인</div>
+ <product-list />
 </template>
 
 <script>
+import productList from "@/components/list/productList.vue"
+
 export default {
   name:'',
-  components:{},
+  components:{productList},
   layout: 'mainLayout', 
   props:{},
   data(){

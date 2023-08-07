@@ -4,7 +4,16 @@
 
 <script>
 export default {
-
+name:'',
+  components:{},
+  layout: 'default', 
+  props:{},
+  data(){
+    return{
+    }
+  },
+  methods:{
+  }
 }
 </script>
 
