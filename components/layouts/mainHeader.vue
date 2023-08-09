@@ -1,6 +1,6 @@
 <template> 
   <div class="main_header">
-    <div class="main_header__logo" @click="on">
+    <div class="main_header__logo" @click="goToMain">
       <img src="@/assets/imgs/Logo_b.png" />
     </div>
     <div class="main_header__btn_wrap">

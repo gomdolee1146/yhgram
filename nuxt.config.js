@@ -22,6 +22,7 @@ export default {
   ],
 
   plugins: [
+    '~/plugins/vue-awesome-swiper.js',
   ],
 
   styleResources: {
