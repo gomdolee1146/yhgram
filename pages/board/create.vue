@@ -26,6 +26,7 @@ import boardForm from '../../components/form/boardForm.vue'
 
 export default {
   components: { boardForm },
+  layout: 'mainLayout',
   name:'boardCreate'
 }
 </script>

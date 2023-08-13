@@ -1,6 +1,6 @@
 <template>
   <div class="main">  
-    
+    <create-btn />
     <board-list />
     <none-box v-if="false">
       <p slot="none_txt">
@@ -12,11 +12,12 @@
 
 <script>
 import NoneBox from '../components/box/noneBox.vue'
+import CreateBtn from '../components/button/createBtn.vue'
 import BoardList from '../components/list/boardList.vue'
 
 export default {
   name: 'indexPage',
   layout: 'mainLayout',
-  components: {BoardList, NoneBox}
+  components: {BoardList, NoneBox, CreateBtn}
 }
 </script>

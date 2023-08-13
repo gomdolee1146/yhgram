@@ -75,18 +75,18 @@
   }
   &__btn {
     flex: 0 0 calc(50% - 4px);
-    height: 36px; 
-    line-height: 36px;
-    border-radius: 18px;
+    height: 40px; 
+    line-height: 40px;
+    border-radius: 20px;
     box-sizing: border-box;
     &-active {
       background: $primary;
       @include font_default(14px, 700, #fff);
     }
     &-inactive {
-      line-height: 34px;
-      border: 1px solid $primary;
-      @include font_default(14px, 700, $primary4);
+      line-height: 38px;
+      border: 1px solid $primary4;
+      @include font_default(14px, 700, $primary6);
     }
     &-disabled {
       

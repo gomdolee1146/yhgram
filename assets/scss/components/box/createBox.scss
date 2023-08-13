@@ -1,0 +1,26 @@
+.create {
+    position: relative;
+    width: auto;
+    padding: 15px 16px;
+    margin: 24px 20px 16px;
+    border-radius: 12px;
+    background: $gradient;
+    box-sizing: border-box;
+    box-shadow: 0 4px 10px rgba(0, 143, 160, 0.3);
+    cursor: pointer;
+
+    &__txt {
+        @include font_default(13px, 400, $gray1);
+    }
+    &__title {
+        margin-top: 2px;
+        @include font_default(15px, 700, $gray1);
+    }
+    &__ico {
+        position: absolute;
+        top: 50%;
+        right: 16px;
+        @include setIcon('chevron', 24px, $svg_gray1);
+        transform: translateY(-50%);
+    }
+}

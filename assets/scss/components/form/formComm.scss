@@ -1,10 +1,10 @@
 .form {
-
+   
   &__title {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-
+    margin-bottom: 18px;
     @include font_default(16px, 500, $primary);
 
     i {
@@ -12,11 +12,12 @@
       width: 20px;
       height: 20px;
       margin-left: 4px;
-      background: $primary;
+      background: iconImg('airplane', $svg_primary) center / auto 100%;
     }
-
   }
+
   &__input {
+    width: 100%;
     padding: 12px 16px;
     margin-bottom: 8px;
     border: 1px solid $gray3;
@@ -33,10 +34,9 @@ input.form__input{
 }
 textarea.form__input{
   height: 280px;
+  line-height: 1.4em;
 }
 
-.form__input {
-  &::placeholder {
-    @include font_default(13px, 400, $gray8);
-  }
+.form__input::placeholder {
+	@include font_default(14px, 400, $gray5, -.05em);
 }

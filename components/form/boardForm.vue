@@ -1,60 +1,46 @@
 <template> 
  <div class="board_form">
 	<div class="form__title">
-		<h4 class="form__txt">여행기록하기</h4>
+		<h4 class="form__txt title_medium">여행기록하기</h4>
 		<i></i>
 	</div>
 	<div class="board_form__wrap">
-		<div class="board_form__title">
-			<input type="text" class="form__input" placeholder="제목을 입력해주세요." v-model="boardTitle" />
+		<div class="board_form__cont">
+			<input type="text" class="form__input" placeholder="여행에 대한 기록을 남겨보세요." v-model="boardTitle" />
 		</div>
 		<div class="board_form__cont">
-			<textarea class="form__input" v-model="boardCont"></textarea>
+			<textarea class="form__input" placeholder="어떤 여행이었나요?" v-model="boardCont"></textarea>
 		</div>
 
-		<template v-if="false"><!-- 여행 글쓰기 일때 -->
-			<div class="board_form__photo">
-				<div class="board_form__photo_title">여행 장소에서 찍은 사진을 어쩌구 </div>
-				<swiper :options="boardPhoto">
-					<template v-if="1"><!-- 사진이 있을 때 -->
-						<swiper-slide v-for="(photoSlide, idx) in photoList" :key="idx">
-							<div class="board_form__photo_box">
-								<img :src="photoSlide.src" />
-							</div>
-						</swiper-slide>
-					</template>
-					<template v-if="2"> <!-- 사진이 없을 때 -->
-						<swiper-slide v-for="(photoSlide, idx) in photoList" :key="idx">
-							<div class="board_form__photo_box  board_form__photo_box-none">
-							</div>
-						</swiper-slide>
-					</template>
-				</swiper>
-			</div>  
-			<div class="borad_form__chk">
-				<span>
-					<input type="checkbox" class="" />
-					<label class="">어떤 내용에 동의합니다</label>
-				</span>
-			</div>
-			<div class="board_form__btn">
-				<button class="board_form__btn-active" @click="onBoard">글 등록하기</button>
-			</div>
-		</template>
-		<template v-if="true"> <!-- 그룹초대 게시글일때 -->
-			<div class="board_form__invite">
-				<h4 class="board_form__title">하이하이</h4>
-				<ul class="board_form__list">
-					<li class="board_form__lst">
-						<div class="board_form__user">
-							<div class="user__thumb"></div>
-							<div class="user__info"></div>
-							<div class="user__badge"></div>
+		<div class="board_form__photo">
+			<div class="board_form__photo_title">여행 장소에서 찍은 사진들을 공유해보세요!</div>	
+			
+			<swiper :options="boardPhoto">
+				<template v-if="true">
+					<swiper-slide v-for="(a, idx) in 3" :key="idx">
+						<div class="board_form__photo_box">
+							{{ a }}
 						</div>
-					</li>
-				</ul>
-			</div>
-		</template>
+					</swiper-slide>
+				</template>
+				<template v-if="true">
+					<swiper-slide v-for="(photoCont, idx) in photoList" :key="idx">
+						<div class="board_form__photo_box">
+							<img :src="photoCont" />
+						</div>
+					</swiper-slide>
+				</template>
+			</swiper>
+		</div>  
+		<div class="borad_form__chk">
+			<span>
+				<input type="checkbox"/>
+				<label >어떤 내용에 동의합니다</label>
+			</span>
+		</div>
+		<div class="board_form__btn_wrap">
+			<button class="board_form__btn board_form__btn-active" @click="onBoard">글 등록하기</button>
+		</div>
 	</div>
  </div>
 </template>
@@ -70,20 +56,26 @@ export default {
 			boardTitle:'',
 			boardCont:'',
 			boardPhoto: {
-				wrapperClass: '',
-				slideClass: '',
-				freeMode: true,
-				slidesPerView: 'auto'
+				wrapperClass: 'g_swiper__wrapper',
+				slideClass: 'g_swiper__slide',
+				slidesPerView: 'auto',
 			},
 			photoList: [
-				{},
-			]
+				require(`~/assets/imgs/bg_travel01.png`),
+				require(`~/assets/imgs/bg_travel02.png`),
+				require(`~/assets/imgs/bg_travel03.png`),
+				require(`~/assets/imgs/bg_travel04.png`),
+				require(`~/assets/imgs/bg_travel05.png`),
+				require(`~/assets/imgs/bg_travel06.png`),
+				require(`~/assets/imgs/bg_travel07.png`),
+			],
 		}
 	},
 	methods:{
-		onBoard() {
-			console.log('gg')
+		onBoard(){
+			console.log('gd')
 		}
+		
 	}
 }
 </script>
