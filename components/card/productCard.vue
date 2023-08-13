@@ -6,7 +6,7 @@
     <div class="card__cont">
         <div class="card__cont_box">
             <div class="card__cont-top">
-                <p class="large_samll">{{ product.airline }}</p>
+                <p class="large_small">{{ product.airline }}</p>
                 <p class="title_small">{{ product.title }}</p>
             </div>
             <div class="card__cont-mid">
@@ -37,7 +37,6 @@ export default {
   layout:'default',  
   props:{
     product: {type:Object, default: () => {}}
-
   },
   data(){
     return{

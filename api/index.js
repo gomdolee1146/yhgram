@@ -4,9 +4,11 @@ const app = express();
 const db = require('./db');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const methodOverride = require('method-override');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(methodOverride('_method'));
 
 app.get('/', function (req, res) {
   res.send('Hello World!')
@@ -60,8 +62,8 @@ app.put('/boards/show/:id', function(req, res){
   req.body.board.updatedAt = Date.now();
   Board.findByIdAndUpdate(req.params.id, req.body.board)
     .then(board => {
-      // res.redirect('/boards/show/' + req.params.id);
       res.json({success: true, message: board._id+" updated"})
+      // res.redirect('/boards/show/' + req.params.id);
     })
     .catch(err => {
       return res.json({success: false, message: err})
@@ -71,7 +73,8 @@ app.put('/boards/show/:id', function(req, res){
 app.delete('/boards/show/:id', function(req, res) {
   Board.findByIdAndRemove(req.params.id)
     .then(board => {
-      res.json({success:true, message: board._id + ' deleted'})
+      // res.json({success:true, message: board._id + ' deleted'})
+      res.redirect('/index');   // 글 삭제 후 전체게시글 리스트 페이지로 이동
     })
     .catch(err => {
       return res.json({success:false, message:err});

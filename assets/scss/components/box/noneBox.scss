@@ -1,0 +1,11 @@
+.none_box {
+    @include flex_column(flex-start, center);
+    padding-top: 158px;
+    margin: 80px 0;
+    background: url('@/assets/imgs/img_none.png') no-repeat top center / auto 134px;
+
+    p {
+        @include font_default(18px, 700, $gray6);
+        text-align: center;
+    }
+}

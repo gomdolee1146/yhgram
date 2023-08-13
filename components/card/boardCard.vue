@@ -16,7 +16,7 @@
 		<div class="card__photo">
 			<swiper :options="cardPhoto" class="card__photo_box">
 				<swiper-slide v-for="(photoCont, idx) in photoList" :key="idx">
-					<!-- <img :src="photoCont" /> -->
+					<img :src="photoCont" />
 				</swiper-slide>
 			</swiper>
 			<div class="card__photo_pagination"></div>

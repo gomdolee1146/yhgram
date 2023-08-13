@@ -15,18 +15,19 @@ export default {
   props:{},
   data(){
     return{
-
+      product: this.productData
     }
   },
   methods:{
   },
   computed: {
-     productData() {
-        // return this.$store.state.product.productList
-        return this.$store.state.product.productList
+    productData() {
+      return this.$store.state.product.product.productList
     }
+  },
+  mounted(){
+    console.log(this.product)
   }
-
 }
 </script>
 <style lang="scss" scoped>
