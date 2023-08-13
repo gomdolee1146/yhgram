@@ -21,7 +21,7 @@ export default {
   },
   methods:{
     goToMain(){
-      $this.router.push('/'); // router.push 인지 replace인지 확인
+      this.$router.push('/'); // router.push 인지 replace인지 확인
     }
   }
 

@@ -31,5 +31,22 @@
         &-mypage {
             background: iconImg(profile, $svg_gray6) no-repeat top center / 24px auto;
         }
+
+        &-home.on {
+            background: iconImg(home, $svg_primary) no-repeat top center / 24px auto;
+            @include font_default(14px, 700, $primary);
+        }
+        &-mylist.on {
+            background: iconImg(airplane, $svg_primary) no-repeat top center / 24px auto;
+            @include font_default(14px, 700, $primary);
+        }
+        &-product.on {
+            background: iconImg(mappin, $svg_primary) no-repeat top center / 24px auto;
+            @include font_default(14px, 700, $primary);
+        }
+        &-mypage.on {
+            background: iconImg(profile, $svg_primary) no-repeat top center / 24px auto;
+            @include font_default(14px, 700, $primary);
+        }
     }
 }

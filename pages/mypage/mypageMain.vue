@@ -6,17 +6,7 @@
 export default {
 name:'',
   components:{},
-  layout: 'default', 
+  layout: 'mainLayout',
   props:{},
-  data(){
-    return{
-    }
-  },
-  methods:{
-  }
 }
 </script>
-
-<style>
-
-</style>

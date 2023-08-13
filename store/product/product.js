@@ -94,7 +94,6 @@ const product = {
          
         ],
     }),
-    
   
     getters: {},
     mutations: {
