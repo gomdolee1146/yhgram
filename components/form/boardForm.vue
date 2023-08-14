@@ -19,12 +19,16 @@
 				<template v-if="true">
 					<swiper-slide>
 						<div class="board_form__photo_box">
-							<input type="file" 
+							<input 
+								type="file" 
 								name="board__upload" 
 								class="board_form__input"
 								@change="uploadImage()"
+								ref="boardImage"
 							 />
-							<label class="board_form__label" for="board__upload" @click="clickLabel"></label> 
+							<label class="board_form__label" for="board__upload" @click="clickLabel">
+								{{boardUploadName}}	
+							</label> 
 						</div>
 					</swiper-slide>
 				</template>
@@ -58,6 +62,7 @@ export default {
 	props:{},
 	data(){
 		return{
+			boardUploadName:'',
 			boardTitle:'',
 			boardCont:'',
 			boardPhoto: {
@@ -79,9 +84,30 @@ export default {
 	methods:{
 		onBoard(){
 			console.log('gd')
+		},
+		uploadImage(e){
+			// 사진 업로드, 저장할 방법 확인
+			// let data = new FormData();
+			// let image = this.$refs['boardImage'].files[0]
+
+			// data.append('image', image)
+
+			// axios.post('/api/board/upload', form, {
+			// 	header: {'Content-Type': 'multipart/form-data'}
+			// }).then((data) => {
+			// 	this.images = data
+			// })
+			// .catch(err => console.log(err))
+			
+			// this.$nextTick(() => {
+			// 	submit();
+			// })
+		},
+		clickLabel() {
+			console.log('gd33')
+			this.$refs['boardImage'].click()
 		}
-		
-	}
+	},
 }
 </script>
 <style lang="scss" scoped>
