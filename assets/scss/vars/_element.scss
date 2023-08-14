@@ -1,0 +1,12 @@
+.g_modal { 
+  position: fixed;
+  background: rgba(0,0,0,.6);
+  z-index: 1;
+}
+
+::v-deep .g_swiper__wrapper {
+  display: flex !important;
+}
+.g_swiper__slide {
+  flex: 0 0 auto;
+}

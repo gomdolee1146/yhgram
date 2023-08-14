@@ -1,5 +1,5 @@
 // =========================================================================================
-@mixin img_cover($w, $h, $br:50%, $borderColor:$gray2) {
+@mixin img_cover($w, $h, $br:50%, $borderColor:$gray3) {
   width: $w;
   height: $h;
   border: 1px solid $borderColor;
