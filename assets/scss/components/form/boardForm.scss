@@ -13,7 +13,8 @@
 		margin: 48px 0 36px;
 
 		&_title {
-			@include font_default(13px, 400, $gray5);
+			margin-bottom: 12px;
+			@include font_default(13px, 400, $gray5, -.05em);
 		}
 
 		&_box {

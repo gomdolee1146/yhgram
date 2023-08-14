@@ -17,9 +17,14 @@
 			
 			<swiper :options="boardPhoto">
 				<template v-if="true">
-					<swiper-slide v-for="(a, idx) in 3" :key="idx">
+					<swiper-slide>
 						<div class="board_form__photo_box">
-							{{ a }}
+							<input type="file" 
+								name="board__upload" 
+								class="board_form__input"
+								@change="uploadImage()"
+							 />
+							<label class="board_form__label" for="board__upload" @click="clickLabel"></label> 
 						</div>
 					</swiper-slide>
 				</template>
